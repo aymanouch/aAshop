@@ -46,6 +46,10 @@ function slideBox(elts) {
         addPosition($('.our-product .product-slide'),85);
     }
 }
+// create function for show alert for the option not responsive now!
+function showAlert() {
+    alert('this option not responsive now !');
+}
 // execute function addPosition 
 addPosition($('.our-product .product-slide'),85);
 // gere click event to a circle menu
@@ -55,6 +59,9 @@ $('header#header nav .nav-bar .con-list .menu a').on('click', function () {
 // gere event click to click-elt 
 $('.our-product .click-elt').on('click', function () {
     slideBox($('.our-product .product-slide'));
-    console.log('eltment has be clicked ');
+});
+// gere the elt for alert 
+$('.faild').on("click", function () {
+    showAlert();
 })
 });
