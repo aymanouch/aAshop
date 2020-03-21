@@ -4,6 +4,8 @@
     font-family: 'Varela Round', sans-serif;
 
     font-family: 'Noto Sans HK', sans-serif;
+
+    font-family: 'Oswald', sans-serif;
 */
 
 /* specific classes and global tags */
@@ -12,7 +14,16 @@
     width: 95%;
     margin:auto;
 }
-
+.overley{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: #00000096;
+    z-index: 500;
+    
+}
 body{
     margin: 0;
     padding: 0;
@@ -23,7 +34,9 @@ body{
 .background-color1{
     background:#000;
 }
-
+.background-color2{
+    background:#f4f4f4;
+}
 .float-left{
     float:left;
 }
@@ -33,6 +46,9 @@ body{
 .col-mos{
     color:#000;
 }
+.white-color{
+    color:#fff;
+}
 .col-mos-op{
     color:rgba(69, 62, 62, 0.58);
 }
@@ -41,6 +57,17 @@ body{
 }
 .border-bottom{
     border-bottom:1px solid rgba(0,0, 0, 0.5);
+}
+.title{
+        font-family: 'Varela Round', sans-serif;
+        margin-bottom: 40px;
+        font-size: 30px;
+        text-transform:uppercase;  
+
+}
+.book{
+    width:50%;
+    float: left;
 }
 /* start HEADER config */
 header#header{
@@ -125,12 +152,24 @@ header#header nav .nav-bar .con-list ul{
     left:100%;
     display:flex;
     line-height:16vh;
-    justify-content: space-around;
+    justify-content: flex-start;
     overflow: hidden;
+}
+header#header nav .nav-bar .con-list ul li{
+    margin-right: 64px;
+}
+header#header nav .nav-bar .con-list ul li:last-of-type(){
+    margin-right:0;
 }
 header#header nav .nav-bar .con-list ul li a{
     text-decoration:none;
+    text-transform:uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition:color .3s linear;
 
+}
+header#header nav .nav-bar .con-list ul li a:hover{
+    color:#2e05a8;
 }
 header#header nav .nav-bar .catalog {
     width: 20%;
@@ -247,7 +286,7 @@ header#header nav .other .pay i{
     transition:all 1s ease;
 }
 /* start the content of the product content */
-.our-product .product-slide .left-box, .right-box{
+.our-product .product-slide .left-box, .our-product .product-slide .right-box{
     width:20%;
     height: 100%;
     font-family: 'Varela Round', sans-serif;
@@ -312,7 +351,430 @@ header#header nav .other .pay i{
    line-height:32px;
 
 }
+                    /* $$$$$$$$$$$$$$$$$$$$$$$$$$  $$$$ start store section $$$ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  */
+section.store{
+    width:100%;
+    padding:40px 0;
 
+}
+section.store .container_card{
+    display:flex;
+    
+    flex-wrap:wrap;
+}
+
+section.store .con-card{
+    width: 20%;
+    height:50vh;
+    background:#fff;
+    border-radius:25px;
+    margin:0 95px 32px 0;
+}
+section.store .con-card:hover{
+    border-radius:0;
+}
+/* start the card for product */
+section.store .container_card .card{
+    transition: top 1s ease-out;
+    transition:box-shadow .5s cubic-bezier(0.54, 0.5, 0.21, 1.13);
+    cursor:pointer;
+    box-sizing:2px 1px 6px 0px #000;
+}
+section.store .container_card .card:not(.ho-class):hover{
+    box-shadow:1px 3px 7px #000;;
+}
+section.store .container_card .card:hover .img-pro{
+    transform: scale(1.1);
+}
+section.store .container_card .card .close{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #0000003b;
+    top: 1%;
+    left: 1%;
+    position: absolute;
+    z-index: 888;
+    cursor:pointer;
+}
+
+section.store .container_card .card .img-pro {
+    width:100%;
+    height:25vh;
+    transition: all .5s ease;
+}
+section.store .con-card .card .myimg img{
+    width:100%;
+    height: 100%;
+}
+section.store .container_card .card .info-pro {
+    width:100%;
+    height:25vh;
+}
+section.store .container_card .card .info-pro.large{
+    width: 50%;
+    height: 25vh;
+    position: absolute;
+    top: 60%;
+    left: 0;
+}
+section.store .container_card .card .info-pro .price-pro, section.store .container_card .card .info-pro .name-pro{
+    height: 8vh;
+    line-height: 8vh;
+    padding: 0 0 0 16px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+}
+section.store .container_card .card .info-pro .more-info{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 15px;
+    padding:0 0 0 16px;
+    color: #928D8D;
+}
+section.store .container_card .show  .myimg img{
+    width: 40vh;
+    height:40vh;
+    position:absolute;
+    top: 40vh;
+    left:40vh;
+    transform: translate(-50%, -50%);
+}
+section.store .container_card .card .discription{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 25vh;
+}
+section.store .container_card .card .discription h2{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Varela Round', sans-serif;
+}
+section.store .container_card .card .discription p{
+    color:#808080;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 13px;
+}
+section.store .container_card .card .compteur{
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50px;
+    border: 1px solid #cdcdcd;
+    overflow: hidden;
+}
+section.store .container_card .card .compteu .box-cont{
+    width: 100%;
+}
+section.store .container_card .card .compteur .plus, .moins{
+    display:inline-block;
+    width:20%;
+    height:100%;
+    text-align: center;
+    line-height: 32px;
+    font-size:12px;
+}
+section.store .container_card .card .compteur .number{
+    display:inline-block;
+    width:50%;
+    height:100%;
+    text-align: center;
+    line-height: 32px;
+    font-size:16px;
+}
+section.store .container_card .card .btn-buy{
+    width: 120px;
+    height: 70px;    
+    position: absolute;  
+    top: 50%;
+    left: 12%;
+}
+section.store .container_card .card .btn-buy a{
+    display: inline-block;
+    background: rgba(161, 160, 160, 0.212);
+    padding: 10px 24px;
+    font-size: 12px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-family: 'Varela Round', sans-serif
+}
+section.store .container_card .card .btn-buy a i{
+    margin-right:8px;
+}
+section.store .container-btn {
+   width:100%;
+   display:flex;
+   justify-content: center;
+}
+section.store .view-more{
+    border:none;
+    outline:none;
+    padding:16px 32px;
+    margin:auto;
+    cursor:pointer;
+}
+section.store .view-more:hover{
+    opacity: 0.8;
+}
+
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ strat section about $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+section#about{
+    padding:40px 0;
+    width:100%;
+    overflow:hidden;
+}
+section#about .ab-box{
+    height:100vh;
+    border:1px solid #fff;
+    box-sizing:border-box;
+}
+section#about .left-box h1{
+    font-family: 'Oswald', sans-serif;
+    font-size:90px;
+    
+}
+section#about .left-box h1 span:nth-child(1) {
+    background: #6130f2;
+}
+section#about .left-box p{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 30px;
+}
+section#about .right-box{
+    padding: 0 0 0 24px;
+}
+section#about .right-box .img-ab{
+    width: 100%;
+    height: 100%;
+    position:relative;
+}
+section#about .right-box .img-ab .back-title h2{
+    font-size: 70px;
+    position:absolute;
+    font-family: 'Oswald', sans-serif;
+    text-transform:uppercase;
+}
+section#about .right-box .img-ab .back-title h2:nth-of-type(1){
+    bottom: 0;
+    right: 0;
+}
+section#about .right-box .img-ab .back-title h2:nth-of-type(2){
+    bottom: 80px;
+}
+section#about .right-box .img-ab .back-title h2:nth-of-type(3){
+    right: -77px;
+    transform: rotate(90deg);
+    margin: 0;
+    top: 108px;
+}
+section#about .right-box .img-ab .back-title .block-img{
+    position:absolute;
+    top:0;
+    left:40px;
+}
+section#about .right-box .img-ab .back-title .block-img img{
+    width:70vh;
+    height:70vh;
+
+    
+}
+/* start slide logo  */
+section#supporters{
+    padding: 80px 0 200px 0;
+}
+section#supporters h1{
+    width: 50%;
+    margin: 0px auto 80px auto;
+    text-align:center;
+}
+section#supporters .ay-container .box-slide .elt img{
+   width:100%;
+   height:100%;
+}
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$      start the footer section              $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+footer{
+    width: 100%;
+    height: 100vh;
+    background: #6130f2;
+    position:relative;
+    overflow: hidden;
+}
+footer .top-box{
+    width:100%;
+    height: 30vh;
+    background:#fff;
+}
+footer .top-box .head-title{
+    position:relative;
+    width: 100%;
+    height: 50%;
+}
+footer .top-box .head-title .poin-container{
+    position:absolute;
+    top:0;
+    right:0;
+}
+footer .top-box .foot-title{
+    width:100%;
+    height:50%;
+    position: relative;
+}
+footer .top-box .foot-title h1{
+    font-family: 'Cardo', serif;
+    font-weight: bold;
+    font-size:200px;
+    margin: 0;
+    line-height: 160px;
+    text-align: center;
+    color:#6130f2;
+}
+footer .bottom-box{
+    position:relative;
+    z-index: 99;
+    overflow: hidden;
+}
+footer .bottom-box .info-site{
+    width:60%;
+    height: 100%;
+    float: left;
+    box-sizing:border-box;
+    padding:64px 16px;
+
+}
+footer .bottom-box .info-site h2{
+    color:#fff;
+    text-transform:uppercase;
+    font-family: 'Tahoma', 'Arial' , sans-serif;
+    margin: 24px 0;
+}
+footer .bottom-box .info-site .list-info{
+    display:flex;   
+}
+footer .bottom-box .info-site .list-info ul{
+    list-style:none;
+    margin: 0 16px 0 0;
+}
+footer .bottom-box .info-site .list-info ul:last-of-type{
+    margin-right:0;
+}
+footer .bottom-box .info-site .list-info ul li{
+    margin: 16px 0;
+}
+footer .bottom-box .info-site .list-info ul li:last-of-type{
+    margin-bottom: 0;
+}
+footer .bottom-box .info-site .list-info ul li h3{
+    text-transform: uppercase;
+    font-family: 'Tahoma', 'Arial' , sans-serif;
+    font-size: 25px;
+    color:#fff;
+}
+footer .bottom-box .info-site .list-info ul li a{
+    color: #fff;
+    text-transform: capitalize;
+    font-family: 'Tahoma', 'Arial' , sans-serif;
+    text-decoration:none;
+}
+footer .bottom-box .contact{
+    width:40%;
+    height: 100%;
+    float:left;
+    box-sizing:border-box;
+    padding: 64px 0;
+
+}
+footer .bottom-box .contact .social{
+    width:100%;
+    height:30px;
+    margin: 24px 0;
+    display: flex;
+    justify-content: center;
+}
+footer .bottom-box .contact .social a{
+    display:inline-block;
+    margin: 0 16px 0 0;
+    width: 40px;
+    height:40px;
+    background-color:rgba(198, 180, 250, 0.94);
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    font-size:18px;
+    color:#6130f2;
+    text-decoration: none;
+    font-weight: bolder;
+}
+footer .bottom-box .contact .social a:last-of-type{
+    margin-right:0;
+}
+footer .bottom-box .contact .form label{
+    display: block;
+    text-transform: uppercase;
+    font-family: 'Tahoma', 'Arial' , sans-serif;
+    margin: 64px 0 24px 0;
+    color:#fff;
+    font-size:22px;
+}
+footer .bottom-box .contact .form input[type="email"] {
+    display: block;
+    margin-bottom:8px;
+    padding: 16px 8px;
+    width:240px;
+}
+footer .bottom-box .contact .form input[type="submit"]{
+    display: block;
+    padding: 8px 64px;
+    text-transform: uppercase;
+    font-family: 'Tahoma', 'Arial' , sans-serif;
+    font-size: 19px;
+    width: 258px;
+    background:#2e05a8;
+    border:none;
+    outline: none;
+    color: #fff;
+    cursor:pointer;
+
+}
+footer .bottom-box .contact .form .or{
+    width: 60px;
+    height:60px;
+    line-height:60px;
+    text-align:center;
+    color:#fff;
+    text-transform: uppercase;
+    font-family: 'Tahoma', 'Arial' , sans-serif;
+}
+footer .bottom-box .contact .form  .calldiv a{
+    display: block;
+    width: 200px;
+    padding: 16px 24px;
+    text-decoration: none;
+    color:#fff;
+    background:#4ac959;
+    text-align:center;
+    font-size:16px;
+    text-transform: uppercase;
+    font-family: 'Tahoma', 'Arial' , sans-serif;
+}
+footer .bottom-box .contact .copyright {
+    color: #fafa;
+    padding: 32px 0;
+}
+footer .footpoin{
+    position:absolute;
+    left:0;
+    bottom:0;
+}
 
 
 /* animte classes  */
@@ -324,6 +786,13 @@ header#header nav .nav-bar .con-list .menu a span:nth-child(2).meclose2{
     top: 50%;
     transform: rotate(45deg);
 }
+
+/* class of hidden the boxs */
+.hide{
+    display:none;
+}
+
+/* class of hidden the boxs */
 
 @media only screen and (max-width:600px) {
     /* start media to header section  */
@@ -337,6 +806,7 @@ header#header nav .nav-bar .con-list .menu a span:nth-child(2).meclose2{
     /* start ==logo== into ***header***  */
     header#header nav .logo {
         width: 100%;
+        text-align:center;
     }
     /* start ==navbar== into header  */
     header#header nav .nav-bar {
@@ -355,6 +825,9 @@ header#header nav .nav-bar .con-list .menu a span:nth-child(2).meclose2{
         display:block;
         z-index:999;
         text-align: center;
+    }
+    header#header nav .nav-bar .con-list ul li{
+        margin: 0;
     }
     header#header nav .nav-bar .catalog {
         margin: auto;
@@ -405,7 +878,7 @@ header#header nav .nav-bar .con-list .menu a span:nth-child(2).meclose2{
     .our-product{
         height:120vh;
     }
-    .our-product .product-slide .left-box, .right-box{
+    .our-product .product-slide .left-box, .our-product .product-slide .right-box{
         width:100%;
         height:auto;
     }
@@ -413,11 +886,117 @@ header#header nav .nav-bar .con-list .menu a span:nth-child(2).meclose2{
         width:100%;
         height:29vh;
     }
+    section.store .container_card .card .info-pro .more-info {
+        margin: 16px 0 0 0;
+    }
+    /* start the store section  */
+    section.store .container_card{
+        overflow: hidden;
+        display: block;
+    }
+    section.store .con-card {
+        width: 45%;
+        height: 50vh;
+        background: #fff;
+        border-radius: 25px;
+        float: left;
+        margin: 0 7px 32px 8px;  
+    }
+    section.store .container_card .card .info-pro{
+        top: 50%;
+        width: 100%;
+        height:auto;
+
+    }
+    section.store .container_card .card .info-pro .price-pro{
+        height: 6vh;
+        line-height: normal;
+        font-size:16px;
+    }
+    section.store .container_card .card .info-pro .name-pro {
+        height:5vh;
+        line-height:normal;
+        font-size:15px;
+    }
+    section.store .container_card .card .info-pro .more-info{
+        font-size:11px;
+    }
+
+    section.store .container_card .card .discription{
+        width:100%;
+        height: 26vh;
+        top: 74%;
+        left:0%;
+        padding: 0 4px;
+    }
+    section.store .container_card .card .compteur{
+        top: 40%;
+    }
+    section.store .container_card .card .btn-buy{
+        top: 40%;
+        right: 2%;
+        left: 36%;
+    }
+    /* start media query for about */
+   section#about .book{
+       float:none;
+       width:100%;
+    }
+    section#about .ab-box.left-box{
+        height:130vh;
+    }
+    section#about .right-box .img-ab .back-title h2{
+        z-index:9;
+    }
+    section#about .right-box .img-ab .back-title h2:nth-of-type(2){
+        right: 0;
+        transform: rotate(0deg);
+        z-index: 9;
+    }
+    section#about .right-box .img-ab .back-title .block-img{
+        left:0;
+    }
+    section#about .right-box .img-ab .back-title .block-img img{
+        width: 50vh;
+        height: 65vh;
+    }
+    /* """"""""""""""""""""" start supported section """"""""""""""""""""""" */
+    section#supporters h1{
+        width:100%;
+    }
+
+    /* """"""""""""""""""" start footer """"""""""" */
+    footer{
+        height:200vh;
+
+    }
+    footer .top-box .foot-title h1{
+        font-size:75px;
+        line-height:170px;
+    }
+    footer .bottom-box .info-site{
+        width:100%;
+        padding: 64px 0;
+    }
+    footer .bottom-box .info-site .list-info{
+        flex-wrap: wrap;
+    }
+    footer .bottom-box .contact{
+        width:100%;
+        padding:0;
+        text-align:center;
+    }
+    footer .bottom-box .contact .form input[type="email"], footer .bottom-box .contact .form input[type="submit"]{
+        margin: 0px auto 8px auto;
+    }
+    footer .bottom-box .contact .form .or, footer .bottom-box .contact .form .calldiv a {
+        margin:auto;
+    }
+    footer .footpoin{
+        left: -50%;
+        bottom: -5%;
+    }
 }
-
-
-
-
 
 
 

@@ -9,7 +9,6 @@ function closeMenu () {
     menu = $('header#header nav .nav-bar .con-list ul'),
     widWin = $(window).width(),
     hei = (widWin < 600) ? '65vh' : '100%';
-    console.log(widWin);
     if(sp1.hasClass("meclose1") && sp2.hasClass("meclose2")) {
         sp1.removeClass('meclose1');
         sp2.removeClass('meclose2');
@@ -49,7 +48,24 @@ function slideBox(elts) {
 // create function for show alert for the option not responsive now!
 function showAlert() {
     alert('this option not responsive now !');
-}
+};
+function deletMarRi(elt) {
+    var lenElt = elt.length;
+    let i = 0;
+    do {
+       if(i%4===0) {
+         elt.eq(i - 1).css('margin-right', 'auto');
+       }
+       i++;
+    } while(i!=lenElt);
+};
+// strat creation function scroll to elements
+function scrollToElt(elt) {
+        $('html, body').animate({
+            scrollTop:$('#' + elt.attr('data-scroll')).offset().top
+        }, 500);
+        console.log($('#' + elt.attr('data-scroll')).offset().top)
+};
 // execute function addPosition 
 addPosition($('.our-product .product-slide'),85);
 // gere click event to a circle menu
@@ -64,4 +80,24 @@ $('.our-product .click-elt').on('click', function () {
 $('.faild').on("click", function () {
     showAlert();
 })
+// appelle function deleteMarRi 
+deletMarRi($("section.store .con-card"));
+// start gere event click to link in the head
+$('header#header nav .nav-bar .con-list ul li a').on('click', function() {
+    scrollToElt($(this));
+    closeMenu();
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
 });

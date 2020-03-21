@@ -1,0 +1,38 @@
+.ay-container{
+    overflow:hidden;
+    width:60%;
+    box-sizing:border-box;
+    position:relative;
+    height:20vh;
+    margin:auto;
+    background-color: #fff;
+}
+.ay-container .box-slide{
+    display:flex;
+    position:relative;
+}
+.ay-container .box-slide .elt{
+    width:25%;
+    height:100px;
+    position:absolute;
+    top:0;
+    left: 0;
+    transition:left 1s ease;
+    /* some proprety for styling you can change According to your opinion */
+    font-size:40px;
+    text-align: center;
+    font-family:'arial', sans-serif;
+    line-height: 100px;
+
+
+}
+.hide{
+    z-index:-999;
+}
+
+
+@media only screen and (max-width:600px){
+    .ay-container .box-slide .elt{
+        width:100%;
+    }
+}
